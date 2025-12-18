@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.studentapp.controller.MainController"
+      spacing="14">
+
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <!-- INPUT STUDENT -->
+    <HBox spacing="12">
+        <Label text="NPM:"/>
+        <TextField fx:id="npmField" prefWidth="140"/>
+
+        <Label text="Name:"/>
+        <TextField fx:id="nameField" prefWidth="180"/>
+    </HBox>
+
+    <HBox spacing="12">
+        <Label text="GPA:"/>
+        <TextField fx:id="gpaField" prefWidth="60"/>
+
+        <Label text="Type:"/>
+        <ComboBox fx:id="typeCombo" prefWidth="160"/>
+
+        <Label text="Extra:"/>
+        <TextField fx:id="extraField" prefWidth="180"/>
+
+        <Button text="Add" onAction="#onAddClicked"/>
+    </HBox>
+
+    <!-- TABLE VIEW -->
+    <TableView fx:id="tableView" prefHeight="280">
+        <columns>
+            <TableColumn fx:id="npmCol" text="NPM" prefWidth="120"/>
+            <TableColumn fx:id="nameCol" text="Name" prefWidth="180"/>
+            <TableColumn fx:id="gpaCol" text="GPA" prefWidth="80"/>
+            <TableColumn fx:id="extraCol" text="Extra" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <!-- SCHOLARSHIP CALCULATION -->
+    <HBox spacing="12">
+        <Label text="Tuition:"/>
+        <TextField fx:id="tuitionField" prefWidth="140" promptText="contoh: 1000000"/>
+        <Button text="Calculate Scholarship" onAction="#onShowTotalScholarship"/>
+        <Label fx:id="infoLabel" textFill="blue"/>
+    </HBox>
+
+</VBox>
